@@ -1,6 +1,9 @@
 import database from "infra/database.js";
 
 async function status(request, response) {
+  console.log("Variáveis de ambiente:", process.env);
+  return Response.json({ message: "Debug feito!" });
+  
   const result = await database.query("SELECT 1 + 1");
   console.log(result.rows);
 
